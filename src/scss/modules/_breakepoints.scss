@@ -1,0 +1,13 @@
+@mixin for-size($range) {
+$phone-upper-boundary: 690px;
+$tablet-portrait-upper-boundary: 900px;
+$tablet-landscape-upper-boundary: 1240px;
+
+  @if $range == phone-up {
+    @media (min-width: $phone-upper-boundary) { @content; }
+  } @else if $range == tablet-portrait-up {
+    @media (min-width: $tablet-portrait-upper-boundary) { @content; }
+  } @else if $range == tablet-landscape-up {
+    @media (min-width: $tablet-landscape-upper-boundary) { @content; }
+  }
+}
