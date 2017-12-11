@@ -1,3 +1,4 @@
+//reset mixins
 @mixin reset-list {
   display: inline-block;
   decoration: none;
@@ -8,4 +9,12 @@
   -webkit-text-decoration-skip: objects;
   text-decoration: none;
   color: $main-text--dark;
+}
+
+//background img mixin
+@mixin background_img {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

@@ -1,0 +1,39 @@
+.section {
+  background: $background-section;
+  width: 33%;
+  padding: 1em 1em 4em 2em;
+  margin: 3em 0em 3em 9em;
+  &-header--light {
+    color: $main-text--light;
+  }
+  &-desc--light{
+    color: $main-text--light;
+    line-height: 2em;
+    margin-bottom: 3em;
+  }
+  &-rooms {
+    background: url("/assets/background_rooms.jpg");
+    @include background_img;
+  }
+  &-button{
+    @include reset-link;
+    color: $main-text--light;
+    text-transform: uppercase;
+    border: 1px solid $main-text--light;
+    padding: 10px 20px;
+    font-weight: 800;
+    font-size: 0.6em;
+    &:hover{
+      background: $main-text--light;
+      color: $main-text--dark;
+    }
+  }
+  &-location {
+    background: url("/assets/background_balkon.jpg");
+    @include background_img;
+  }
+  &-family {
+    background: url("/assets/background_family.jpg");
+    @include background_img;
+  }
+}
