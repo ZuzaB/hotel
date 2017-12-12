@@ -7,6 +7,7 @@
   @include for-size(tablet-landscape-up) {
     justify-content: flex-start;
   }
+
   &--fixed {
     position: fixed;
   }
@@ -17,6 +18,7 @@
       border: 1px solid #dedede;
       padding: 10px;
       font-size: 12px;
+
       &:hover {
         border: 1px solid $main-brand;
       }
@@ -26,14 +28,15 @@
   &-nav {
     display: none;
     font-size: 12px;
+    padding-left: 3.5em;
     @include for-size(tablet-landscape-up) {
       display: block;
     }
-    padding-left: 3.5em;
 
     &__item {
       padding-right: 20px;
       @include reset-list;
+      position: relative;
 
       &--logo {
         padding: 0 58px 0 32px;
@@ -47,8 +50,42 @@
     &__link {
       @include reset-link;
       padding: 10px;
-      &:hover{
+
+      &:hover {
         color: $main-brand;
+      }
+
+      &--sub {
+        &:hover {
+          background: $main-brand;
+          color: $main-text--light;
+        }
+      }
+    }
+  }
+
+  &-sub {
+    background: $main-brand;
+    margin: 0;
+    position: absolute;
+    z-index: 1;
+    padding-left: 0;
+    top: 2em;
+    display: none;
+
+    &__item {
+      @include reset-list;
+      decoration: none;
+      padding: 1em;
+    }
+
+    &__link {
+      @include reset-link;
+      color: $main-text--light;
+      font-weight: normal;
+
+      &:hover {
+        font-weight: bold;
       }
     }
   }
@@ -66,13 +103,17 @@
       }
     }
   }
+
   &-mobile {
     display: block;
     height: 50px;
     width: 50px;
     cursor: pointer;
-    &__img{//change for ico
-      &:hover{
+
+    &__img {
+      //change for ico
+
+      &:hover {
         fill: $main-brand;
       }
     }
@@ -82,13 +123,15 @@
   }
 }
 
-.top{
+.top {
   position: relative;
-  &-img{
+
+  &-img {
     background: url("/assets/top_background_view.jpg");
     @include background_img;
   }
-  &-price{
+
+  &-price {
     position: absolute;
     background-color: $main-brand;
     color: $main-text--light;
@@ -97,25 +140,30 @@
     padding: 0.5em 0.9em;
     top: 30px;
     right: 0;
-    &:hover{
+
+    &:hover {
       background-color: $main-text--light;
       color: $main-brand;
     }
-    &__link{
+
+    &__link {
       @include reset-link;
       color: inherit;
     }
+
     &__item {
       text-transform: uppercase;
       font-weight: 800;
       font-size: 1em;
-      &--small{
+
+      &--small {
         font-weight: normal;
         font-size: 0.65em;
       }
     }
   }
-  &-opinion{
+
+  &-opinion {
     position: absolute;
     color: $main-text--light;
     height: 4em;
@@ -128,19 +176,22 @@
     line-height: 1em;
     left: 40px;
     bottom: 50px;
-    &__rating{
+
+    &__rating {
       line-height: 1.5em;
     }
-    &__desc{
+
+    &__desc {
       font-size: 0.8em;
       font-weight: 600;
     }
   }
+
   &-motto {
     width: 100%;
     text-align: center;
     color: $main-text--light;
-    padding: 18em 0 2em 0;
+    padding: 18em 0 2em;
     text-shadow: $main-text--dark 2px 2px 25px;
 
     &__main {
@@ -150,6 +201,7 @@
       letter-spacing: 5px;
       line-height: 20px;
     }
+
     &__opinion {
       font-style: italic;
       font-size: 1.4em;
