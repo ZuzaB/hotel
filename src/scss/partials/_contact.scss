@@ -1,0 +1,74 @@
+.map {
+  flex: 0 1 50%;
+}
+
+.contact {
+  flex: 0 1 50%;
+  height: 30em;
+  color: $main-text--light;
+  letter-spacing: 1px;
+  line-height: 1.5em;
+  font-weight: 200;
+  &-adress {
+    height: 50%;
+    width: 100%;
+    background: url("/assets/background-reception.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    &__adress {
+      padding: 3em;
+      width: 40%;
+      float: left;
+      font-size: 0.9em;
+    }
+    &__container {
+      width: 60%;
+      float: left;
+    }
+    &__reception {
+      border: 1px solid $main-text--light;
+      font-size: 1em;
+      margin: 2.5em 2em 0 0;
+      padding: 3em 2em;
+      text-align: center;
+
+      &-title{
+        letter-spacing: 6px;
+        font-size: 1.25em;
+      }
+    }
+  }
+  &-promotion {
+    text-align: center;
+    height: 50%;
+    padding-top: 2em;
+    font-size: 0.65em;
+    letter-spacing: 0;
+    background: $side-color;
+    &__header {
+      text-transform: uppercase;
+      font-weight: 200;
+      font-size: 1.8em;
+      letter-spacing: 5px;
+    }
+    &__form {
+      // &-container{
+      //   background: $main-text--light;
+      //   margin: 0 7em;
+      // }
+      &-imput {
+        padding: 1em;
+        border: none;
+        font-size: 1em;
+      }
+      &-button {
+        color: $main-text--light;
+        background: $main-brand;
+        font-size: 1em;
+        padding: 1em 2em;
+        font-weight: bold;
+        border: none;
+      }
+    }
+  }
+}
