@@ -1,15 +1,25 @@
 .section {
   background: $background-section;
-  width: 33%;
-  padding: 1em 1em 4em 2em;
-  margin: 3em 0em 3em 9em;
+  width: 27em;
+  padding: 1em 2em 4em 2em;
+  margin: 3em 20em 3em 9em;
   &-header--light {
     color: $main-text--light;
   }
-  &-desc--light{
-    color: $main-text--light;
-    line-height: 2em;
-    margin-bottom: 3em;
+  &--light {
+    background: $main-text--light;
+    margin: 0;
+    padding-left: 4em;
+  }
+  &-desc {
+    &-container{
+      width: 20em;
+      line-height: 1.5em;
+      margin-bottom: 2em;
+    }
+    &--light {
+      color: $main-text--light;
+    }
   }
   &-rooms {
     background: url("/assets/background_rooms.jpg");
@@ -23,9 +33,15 @@
     padding: 10px 20px;
     font-weight: 800;
     font-size: 0.6em;
-    &:hover{
+    &:hover {
       background: $main-text--light;
       color: $main-text--dark;
+    }
+    &--light {
+      background: $main-brand;
+      &:hover {
+        border-color: $main-brand;
+      }
     }
   }
   &-location {

@@ -85,8 +85,6 @@
 .top{
   position: relative;
   &-img{
-    width: 100%;
-    height: 100%;
     background: url("/assets/top_background_view.jpg");
     @include background_img;
   }
@@ -96,7 +94,7 @@
     color: $main-text--light;
     height: 3em;
     width: 12em;
-    padding: 5px 15px;
+    padding: 0.5em 0.9em;
     top: 30px;
     right: 0;
     &:hover{
@@ -120,19 +118,18 @@
   &-opinion{
     position: absolute;
     color: $main-text--light;
-    height: 5em;
-    width: 5em;
+    height: 4em;
+    width: 4em;
     border: 1px solid $main-text--light;
     background: rgba(0,0,0,0.4);
     font-weight: 800;
     text-transform: uppercase;
     text-align: center;
-    padding: 0 20px;
-    line-height: 14px;
+    line-height: 1em;
     left: 40px;
     bottom: 50px;
     &__rating{
-      line-height: 34px;
+      line-height: 1.5em;
     }
     &__desc{
       font-size: 0.8em;

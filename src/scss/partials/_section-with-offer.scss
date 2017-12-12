@@ -15,7 +15,7 @@
   &-desc {
     flex: 0 1 100%;
     color: $side-text;
-    font-size: 0.7em;
+    font-size: 0.65em;
     &--big{
       font-size: 0.9em;
       text-align: center;
@@ -30,6 +30,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2em;
   &__arrow {
     height: 2em;
     width: 2em;
@@ -53,7 +54,9 @@
   }
   &__link{
     @include reset-link;
-    text-align: center;
+    &:hover {
+      color: $main-brand;
+    }
   }
   &__container{
     position: relative;
@@ -80,6 +83,7 @@
     font-weight: bold;
     &:hover {
       background: $main-brand;
+      border-color: $main-brand;
     }
   }
   &__title {
