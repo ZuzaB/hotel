@@ -2,8 +2,8 @@
   justify-content: space-between;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 0 40px;
-  margin: 6px auto;
+  padding: 6px 40px;
+  // margin: 6px auto;
   position: relative;
   @include for-size(tablet-landscape-up) {
     justify-content: flex-start;
@@ -11,6 +11,8 @@
 
   &--fixed {
     position: fixed;
+    background: $main-text--light;
+    z-index: 1;
   }
 
   &-lang {
@@ -190,10 +192,18 @@
 
 .top {
   position: relative;
-
+  &-slider{
+    width: 100%;
+    height: 100%;
+  }
   &-img {
+    // position: absolute;
     background: url("../assets/top_background_view.jpg");
     @include background_img;
+    &--second {
+      background: url("../assets/top_background_room.jpg");
+        @include background_img;
+    }
   }
 
   &-price {
@@ -238,25 +248,36 @@
 
   &-opinion {
     position: absolute;
+    left: 20px;
+    bottom: 20px;
+    height: 40px;
+    width: 40px;
     color: $main-text--light;
-    height: 4em;
-    width: 4em;
     border: 1px solid $main-text--light;
     background: rgba(0,0,0,0.4);
     font-weight: 800;
     text-transform: uppercase;
     text-align: center;
     line-height: 1em;
-    left: 40px;
-    bottom: 50px;
+    font-size: 10px;
+    z-index: 1;
+    @include for-size(tablet-portrait-up) {
+      left: 40px;
+      bottom: 50px;
+      height: 4em;
+      width: 4em;
+      font-size: 1em;
 
+    }
     &__rating {
       line-height: 1.5em;
     }
-
     &__desc {
-      font-size: 0.8em;
+      font-size: 8px;
       font-weight: 600;
+      @include for-size(tablet-portrait-up) {
+        font-size: 0.8em;
+      }
     }
   }
 
@@ -265,14 +286,17 @@
     text-align: center;
     color: $main-text--light;
     padding: 18em 0 2em;
-    text-shadow: $main-text--dark 2px 2px 25px;
+    text-shadow: $main-text--dark 2px 2px 5px;
 
     &__main {
       text-transform: uppercase;
-      font-size: 3.5em;
+      font-size: 2.6em;
       font-weight: 200;
       letter-spacing: 5px;
       line-height: 20px;
+      @include for-size(phone-up) {
+        font-size: 3.5em;
+      }
     }
 
     &__opinion {
