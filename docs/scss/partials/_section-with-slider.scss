@@ -1,0 +1,25 @@
+.section-slider {
+  width: 27em;
+  position: relative;
+  margin: 4em 0;
+
+  &__img {
+    width: 100%;
+  }
+
+  &__ctrl {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+  }
+
+  &__controlls {
+    height: 25px;
+    width: 25px;
+    border: 1px solid $side-text;
+    padding: 2px;
+    margin: 3px;
+    display: inline-block;
+    cursor: pointer;
+  }
+}
