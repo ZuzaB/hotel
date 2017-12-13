@@ -3,7 +3,8 @@
   font-weight: bold;
   text-transform: uppercase;
   padding: 0 40px;
-  margin: 10px auto;
+  margin: 6px auto;
+  position: relative;
   @include for-size(tablet-landscape-up) {
     justify-content: flex-start;
   }
@@ -13,64 +14,31 @@
   }
 
   &-lang {
-    &__link {
-      @include reset-link;
-      border: 1px solid #dedede;
+    cursor: pointer;
+
+    &__item {
       padding: 10px;
       font-size: 12px;
-
+      border: 1px solid #dedede;
       &:hover {
         border: 1px solid $main-brand;
       }
     }
-  }
-
-  &-nav {
-    display: none;
-    font-size: 12px;
-    padding-left: 3.5em;
-    @include for-size(tablet-landscape-up) {
-      display: block;
-    }
-
-    &__item {
-      padding-right: 20px;
-      @include reset-list;
-      position: relative;
-
-      &--logo {
-        padding: 0 58px 0 32px;
-      }
-
-      &--last {
-        padding-right: 0;
-      }
-    }
-
     &__link {
       @include reset-link;
-      padding: 10px;
-
       &:hover {
         color: $main-brand;
       }
-
-      &--sub {
-        &:hover {
-          background: $main-brand;
-          color: $main-text--light;
-        }
-      }
     }
   }
-
   &-sub {
     background: $main-brand;
     margin: 0;
     position: absolute;
     z-index: 1;
-    padding-left: 0;
-    top: 2em;
+    padding-left: 10px;
+    top: 2.5em;
+    left: 0;
     display: none;
 
     &__item {
@@ -89,9 +57,55 @@
       }
     }
   }
+  &-nav {
+    display: none;
+    font-size: 12px;
+    // padding-left: 3.5em;
+    @include for-size(tablet-landscape-up) {
+      display: block;
+    }
+
+    &__item {
+      padding: 10px 20px;
+      @include reset-list;
+      position: relative;
+      &:hover {
+        .menu-sub {
+          display: block;
+        }
+      }
+      &--sub {
+        &:hover {
+         background: $main-brand;
+         a {
+           color: $main-text--light;
+         }
+        }
+      }
+      &--logo {
+        padding: 0 60px;;
+      }
+
+      &--last {
+        padding-right: 0;
+      }
+    }
+
+    &__link {
+      @include reset-link;
+      &:hover {
+        color: $main-brand;
+      }
+    }
+  }
 
   &-logo {
     display: block;
+    position: absolute;
+    left: 35%;
+    @include for-size(phone-up){
+      left: 45%;
+    }
     @include for-size(tablet-landscape-up) {
       display: none;
     }
@@ -127,7 +141,7 @@
   position: relative;
 
   &-img {
-    background: url("/assets/top_background_view.jpg");
+    background: url("../assets/top_background_view.jpg");
     @include background_img;
   }
 

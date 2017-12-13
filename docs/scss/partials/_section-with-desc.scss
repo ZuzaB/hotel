@@ -27,7 +27,7 @@
   }
 
   &-rooms {
-    background: url("/assets/background_rooms.jpg");
+    background: url("../assets/background_rooms.jpg");
     @include background_img;
   }
 
@@ -55,12 +55,12 @@
   }
 
   &-location {
-    background: url("/assets/background_balkon.jpg");
+    background: url("../assets/background_balkon.jpg");
     @include background_img;
   }
 
   &-family {
-    background: url("/assets/background_family.jpg");
+    background: url("../assets/background_family.jpg");
     @include background_img;
   }
 }
