@@ -1,7 +1,7 @@
 //reset mixins
 @mixin reset-list {
   display: inline-block;
-  decoration: none;
+  list-style: none;
 }
 
 @mixin reset-link {
