@@ -1,5 +1,7 @@
 'use strict';
 $(function() {
+
+  //współrzędne do mapy 49.720260, 19.071670
 //nav events
 var $nav = $('.menu'),
     $navHeight = $nav.height();
@@ -49,6 +51,19 @@ var $tipSlider = $(".top-slider"),
 
 $topImgs.not(':first').hide();
 setInterval(changeSlides, changeImgTime);
+//map
+function initMap() {
+  var uluru = {lat: 49.720, lng: 19.071};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 10,
+    center: uluru
+  });
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map
+  });
+}
+
 
 //to top scroll
 var $scrollTopBtn = $('.go-top');
