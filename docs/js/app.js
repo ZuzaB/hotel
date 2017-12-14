@@ -52,7 +52,6 @@ setInterval(changeSlides, changeImgTime);
 
 //to top scroll
 var $scrollTopBtn = $('.go-top');
-
   $scrollTopBtn.on('click',function(){
     $("html, body").animate({ scrollTop: 0 }, 500);
   });

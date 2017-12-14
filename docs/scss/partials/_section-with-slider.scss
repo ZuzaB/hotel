@@ -1,7 +1,14 @@
 .section-slider {
-  width: 27em;
+  width: 100%;
   position: relative;
-  margin: 4em 0;
+  margin: 40px 20px 0 20px;
+  @include for-size(phone-up) {
+    width: 50em;
+  }
+  @include for-size(tablet-portrait-up) {
+    width: 27em;
+    margin: 4em 0px;
+  }
 
   &__img {
     width: 100%;

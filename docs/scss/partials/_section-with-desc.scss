@@ -8,7 +8,7 @@
     margin: 3em 20em 3em 9em;
     text-align: left;
   }
-  
+
   &-header--light {
     color: $main-text--light;
   }
@@ -20,10 +20,13 @@
   }
 
   &-desc {
+    margin-bottom: 50px;
+    font-size: 15px;
+    @include for-size(tablet-landscape-up){
+      font-size: 0.7em;
+    }
     &-container {
-
       line-height: 1.5em;
-      margin-bottom: 2em;
       @include for-size(tablet-portrait-up){
         width: 20em;
       }
@@ -44,9 +47,9 @@
     color: $main-text--light;
     text-transform: uppercase;
     border: 1px solid $main-text--light;
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-weight: 800;
-    font-size: 0.6em;
+    font-size: 0.7rem;
     letter-spacing: 1px;
 
     &:hover {

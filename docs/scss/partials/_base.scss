@@ -84,6 +84,9 @@ button:-moz-focusring,
   font: inherit;
 }
 
+[hidden] {
+  display: none;
+}
 //global
 * {
   box-sizing: border-box;
@@ -100,8 +103,9 @@ button:-moz-focusring,
   align-items: center;
   justify-content: center;
   font-size: 2.8vw;
+  // font-size: 1.4vw;
   color: $main-text--dark;
-  @include for-size(tablet-portrait-up){
+  @include for-size(phone-up){
     font-size: 1.4vw;
   }
 }
