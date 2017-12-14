@@ -13,18 +13,20 @@
   line-height: 1.5em;
   font-weight: 200;
   @include for-size(phone-up){
-    height: 30em;
+    height: 40em;
   }
   @include for-size(tablet-portrait-up){
+    height: 30em;
     flex: 0 1 50%;
   }
   &-adress {
-      height: 50%;
+    height: 50%;
     width: 100%;
     background: url("../assets/background-reception.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    line-height: 23px;
     padding-bottom: 2em;
     @include for-size(tablet-portrait-up){
       flex: 0 1 50%;
@@ -34,11 +36,14 @@
       padding: 3em;
       width: 100%;
       text-align: center;
-      font-size: 0.9em;
+      font-size: 16px;
       @include for-size(phone-up){
         width: 50%;
         float: left;
         text-align: left;
+      }
+      @include for-size(tablet-portrait-up){
+        font-size: 0.9em;
       }
       @include for-size(tablet-landscape-up){
         width: 40%;
@@ -58,12 +63,18 @@
 
     &__reception {
       border: 1px solid $main-text--light;
-      font-size: 1em;
+      font-size: 18px;
       margin: 2em;
-      padding: 3em 2em;
+      line-height: 23px;
+      padding: 2em 1em;
       text-align: center;
       @include for-size(phone-up){
           margin: 2.5em 2em 0 0;
+          font-size: 16px;
+      }
+      @include for-size(tablet-portrait-up){
+        font-size: 1em;
+        padding: 3em 2em;
       }
 
       &-title {
@@ -77,9 +88,12 @@
     text-align: center;
     height: 50%;
     padding-top: 2em;
-    font-size: 0.65em;
+    font-size: 12px;
     letter-spacing: 0;
     background: $side-color;
+    @include for-size(tablet-landscape-up){
+      font-size: 0.65em;
+    }
 
     &__header {
       text-transform: uppercase;
@@ -89,10 +103,6 @@
     }
 
     &__form {
-      // &-container{
-      //   background: $main-text--light;
-      //   margin: 0 7em;
-      // }
       &-imput {
         padding: 1em;
         border: none;
@@ -113,7 +123,9 @@
 
 .checkbox {
   position: relative;
-  padding: 1em 18em;
+  max-width: 220px;
+  margin: 10px auto;
+  padding-bottom: 10px;
   input {
     display: block;
     opacity: 0;

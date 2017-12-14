@@ -1,6 +1,6 @@
 @mixin for-size($range) {
-$phone-upper-boundary: 600px;
-$tablet-portrait-upper-boundary: 900px;
+$phone-upper-boundary: 760px;
+$tablet-portrait-upper-boundary: 950px;
 $tablet-landscape-upper-boundary: 1220px;
 
   @if $range == phone-up {
