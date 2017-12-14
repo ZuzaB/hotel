@@ -76,12 +76,12 @@
     }
     @include for-size(tablet-landscape-up) {
       position: static;
-      width: 94%;
+      width: 96%;
     }
   }
   &-nav {
     display: none;
-    font-size: 16px;
+    font-size: 18px;
     background: $main-brand;
     padding-left: 0;
     @include for-size(tablet-landscape-up) {
@@ -99,7 +99,7 @@
     }
     &__item {
       list-style: none;
-      padding: 10px 20px;
+      padding: 10px 1.6em;
       @include for-size(tablet-landscape-up) {
          @include reset-list;
           position: relative;
@@ -260,7 +260,6 @@
     text-align: center;
     line-height: 1em;
     font-size: 10px;
-    z-index: 1;
     @include for-size(tablet-portrait-up) {
       left: 40px;
       bottom: 50px;

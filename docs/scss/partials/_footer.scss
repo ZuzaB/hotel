@@ -4,11 +4,26 @@
 
   &-left {
     float: left;
-    width: 50%;
+    width: 100%;
+    @include for-size(tablet-portrait-up){
+      width: 28%;
+    }
+
+    @include for-size(tablet-landscape-up){
+      width: 50%;
+    }
+
 
     &__item {
-      display: inline-block;
-      padding: 1em;
+      text-align: center;
+      display: block;
+      padding: 10px;
+      @include for-size(tablet-landscape-up){
+        display: inline-block;
+      }
+      @include for-size(tablet-landscape-up){
+        padding: 1em;
+      }
 
       &--copy {
         font-size: 0.8em;
@@ -22,24 +37,53 @@
   }
 
   &-right {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     float: left;
-    width: 50%;
+    width: 100%;
+    @include for-size(tablet-portrait-up){
+      width: 72%;
+      justify-content: flex-end;
+    }
+
+    @include for-size(tablet-landscape-up){
+      width: 50%;
+    }
+  }
+}
+
+.go-top {
+  font-weight: bold;
+  color: $side-color;
+  cursor: pointer;
+  margin-left: 5em;
+  font-size: 11px;
+  &__img {
+    margin: 2em 2em 2em 1em;
+    padding: 3px 0;
+    font-size: 29px;
+    background: $side-color;
+    display: inline-block;
+    color: $main-text--light;
+    &:hover {
+      background: $main-brand;
+    }
   }
 }
 
 .social {
   &__list {
-    margin-top: 2em;
-    float: right;
+    margin-top: 3em;
+    padding: 0;
   }
 
   &__item {
     @include reset-list;
-    width: 40px;
-    height: 40px;
+    padding: 5px 3px;
     border: 1px solid #d8d8d8;
     margin-right: 10px;
-
+    font-size: 24px;
     &:hover {
       background: $main-brand;
     }
@@ -47,26 +91,9 @@
 
   &__link {
     @include reset-link;
-  }
-}
-
-.go-top {
-  font-weight: bold;
-  color: $side-color;
-  float: right;
-  cursor: pointer;
-  margin-left: 3em;
-
-  &__img {
-    margin: 2em 2em 2em 1em;
-    height: 40px;
-    width: 40px;
-    padding: 10px;
-    background: $side-color;
-    display: inline-block;
-
+    color: $side-text;
     &:hover {
-      background: $main-brand;
+      color: $main-text--light;
     }
   }
 }

@@ -35,13 +35,17 @@
   margin-bottom: 2em;
 
   &__arrow {
-    height: 2em;
-    width: 2em;
     cursor: pointer;
+    color: $side-text;
+    font-size: 4em;
+    font-weight: 200;
+    &:hover{
+      color: $main-brand;
+    }
   }
 
   &__wrapper {
-    width: 90%;
+    width: 84%;
     height: 20em;
     text-align: center;
   }

@@ -1,6 +1,6 @@
 'use strict';
 $(function() {
-
+//nav events
 var $nav = $('.menu'),
     $navHeight = $nav.height();
   $(window).scroll( function (){
@@ -29,6 +29,7 @@ var $menu = $( '.menu-nav'),
       $menu.hide();
     });
 
+//top slider
 var $tipSlider = $(".top-slider"),
     $topImgs = $tipSlider.find('.top-img'),
     listLen = $topImgs.length,
@@ -37,7 +38,6 @@ var $tipSlider = $(".top-slider"),
     index = 0,
 
   changeSlides = function() {
-
     $topImgs.eq(index).fadeOut(transitionSpeed, function() {
       index += 1;
       if (index === listLen) {
@@ -45,20 +45,15 @@ var $tipSlider = $(".top-slider"),
       }
       $topImgs.eq(index).fadeIn(transitionSpeed);
     });
-
   };
 
 $topImgs.not(':first').hide();
 setInterval(changeSlides, changeImgTime);
-// $(".top-img:gt(0)").hide();//poprawić
-//
-// setInterval(function() {
-//   $('.top-img:first')
-//     .fadeOut(2000)
-//     .next()
-//     .fadeIn(2000)
-//     .end()
-//     .appendTo('.top-slider');
-// },  5000);
 
+//to top scroll
+var $scrollTopBtn = $('.go-top');
+
+  $scrollTopBtn.on('click',function(){
+    $("html, body").animate({ scrollTop: 0 }, 500);
+  });
 });

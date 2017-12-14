@@ -1,9 +1,14 @@
 .section {
   background: $background-section;
-  width: 27em;
   padding: 1em 2em 4em;
-  margin: 3em 20em 3em 9em;
-
+  margin: 2em;
+  text-align: center;
+  @include for-size(tablet-portrait-up){
+    width: 27em;
+    margin: 3em 20em 3em 9em;
+    text-align: left;
+  }
+  
   &-header--light {
     color: $main-text--light;
   }
@@ -16,9 +21,12 @@
 
   &-desc {
     &-container {
-      width: 20em;
+
       line-height: 1.5em;
       margin-bottom: 2em;
+      @include for-size(tablet-portrait-up){
+        width: 20em;
+      }
     }
 
     &--light {
@@ -39,6 +47,7 @@
     padding: 10px 20px;
     font-weight: 800;
     font-size: 0.6em;
+    letter-spacing: 1px;
 
     &:hover {
       background: $main-text--light;
