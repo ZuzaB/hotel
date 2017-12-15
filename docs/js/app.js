@@ -21,14 +21,21 @@ var $lang = $( '.menu-lang' ),
 
 var $menu = $( '.menu-nav'),
     $menuIco = $( '.icon-menu-1'),
-    $menuClouse = $('.icon-cancel');
-  //media?
+    $menuClouse = $('.icon-cancel'),
+    desktop = window.matchMedia('screen and (min-width: 1220px)');
     $menuIco.on('click', function(){
       $menu.show();
     });
     $menuClouse.on('click', function(){
       $menu.hide();
     });
+    desktop.addListener(function(desktop){
+     if(desktop.matches){
+         $menu.show();
+    }else{
+        $menu.hide();
+    }
+});
 
 //top slider
 var $topSlider = $('.top-slider'),
@@ -47,29 +54,104 @@ var $topSlider = $('.top-slider'),
       $topImgs.eq(index).fadeIn(transitionSpeed);
     });
   };
+$topImgs.not(':first').hide();
 setInterval(changeSlides, changeImgTime);
 
 //slider in offer adress__reception
-var $nextArrow = $('.slider__arrow--right'),
-    $prevArrow = $('.slider__arrow--left');
+var nextArrow = document.querySelector('.slider__arrow--right'),
+    prevArrow = document.querySelector('.slider__arrow--left'),
+    sliderItems = document.querySelectorAll('.slider__item'),
+    slideIndexStart = 0,
+    slideIndexFinish = 2;
+
+for (var i=slideIndexStart; i<= slideIndexFinish; i++){
+  sliderItems[i].classList.remove("slider__item--hidden");
+}
+
+    nextArrow.addEventListener('click', function () {
+        for (var i=slideIndexStart; i<= slideIndexFinish; i++){
+        sliderItems[i].classList.add("slider__item--hidden");
+      }
+      slideIndexStart+=3;
+      slideIndexFinish+=3;
+
+        if (slideIndexFinish > sliderItems.length) {
+          slideIndexStart = 0;
+          slideIndexFinish = 2;
+        }
+
+        for (var i=slideIndexStart; i<= slideIndexFinish; i++){
+        sliderItems[i].classList.remove("slider__item--hidden");
+      }
+    });
+
+     prevArrow.addEventListener('click', function () {
+       for (var i=slideIndexStart; i<= slideIndexFinish; i++){
+       sliderItems[i].classList.add("slider__item--hidden");
+     }
+     slideIndexStart-=3;
+     slideIndexFinish-=3;
+
+       if (slideIndexStart < 0) {
+         slideIndexStart = 3;
+         slideIndexFinish = 5;
+       }
+
+       for (var i=slideIndexStart; i<= slideIndexFinish; i++){
+       sliderItems[i].classList.remove("slider__item--hidden");
+     }
+   });
+    //     lis[index].classList.add("hidden");
+    //     index--;
+    //     if (index < 0) {
+    //         index = lis.length - 1;
+    //     }
+    //
+    //     lis[index].classList.remove("hidden");
+    // });
+
+console.log(nextArrow, prevArrow, sliderItems);
 
 //slider with pause in Vanilla JS
-var next = document.querySelectorAll('.section-slider__controlls--right'),
-    prev = document.querySelectorAll('.section-slider__controlls--left'),
-    stop = document.querySelectorAll('.section-slider__controlls--stop'),
-    imgs = document.querySelectorAll('.section-slider__img');//usunąć
+var nextBtn = document.querySelectorAll('.section-slider__controlls--right'),
+    prevBtn = document.querySelectorAll('.section-slider__controlls--left'),
+    stopBtn = document.querySelectorAll('.section-slider__controlls--stop'),
+conference = document.querySelector('.section-conference'),
+spa = document.querySelector('.section-spa'),
+imgs = spa.querySelectorAll('.section-slider__img'),
+    imgsConf = conference.querySelectorAll('.section-slider__img');//usunąć?
 
+    var currSlide = 0;
+    var slideInterval = setInterval(nextSlide,2000);
 
+    function nextSlide(){
+    	imgs[currSlide].className = 'section-slider__img';
+    	currSlide = (currSlide+1)%imgs.length;
+    	imgs[currSlide].className = 'section-slider__img section-slider__img--fade';
+    }
 
+    var playing = true;
 
+    function pauseSlideshow(){
+    	stopBtn[0].innerHTML = '<i class="icon-play"></i>';
+    	playing = false;
+    	clearInterval(slideInterval);
+    }
 
+    function playSlideshow(){
+    	stopBtn[0].innerHTML = '<i class="icon-pause"></i>';
+    	playing = true;
+    	slideInterval = setInterval(nextSlide,2000);
+    }
 
+    stopBtn[0].onclick = function(){
+    	if(playing){ pauseSlideshow(); }
+    	else{ playSlideshow(); }
+    };
 
 //go top
 var $scrollTopBtn = $('.go-top');
   $scrollTopBtn.on('click',function(){
     $('html, body').animate({ scrollTop: 0 }, 500);
   });
-
-  console.log($nextArrow, $prevArrow, $scrollTopBtn, $nav);
 });

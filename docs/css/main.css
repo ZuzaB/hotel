@@ -99,8 +99,11 @@ button:-moz-focusring,
   justify-content: space-between;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 6px 40px;
+  padding: 6px 10px;
   position: relative; }
+  @media (min-width: 760px) {
+    .menu {
+      padding: 6px 40px; } }
   @media (min-width: 1220px) {
     .menu {
       justify-content: flex-start; } }
@@ -264,14 +267,12 @@ button:-moz-focusring,
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center; }
     .top-img--second {
       background: url("../assets/top_background_room.jpg");
       width: 100%;
       background-size: cover;
       background-repeat: no-repeat;
-      background-attachment: fixed;
       background-position: center; }
   .top-price {
     position: absolute;
@@ -320,7 +321,7 @@ button:-moz-focusring,
   .top-opinion {
     position: absolute;
     left: 20px;
-    bottom: 20px;
+    bottom: 50%;
     height: 40px;
     width: 40px;
     color: #fff;
@@ -331,6 +332,9 @@ button:-moz-focusring,
     text-align: center;
     line-height: 1em;
     font-size: 10px; }
+    @media (min-width: 760px) {
+      .top-opinion {
+        bottom: 20px; } }
     @media (min-width: 950px) {
       .top-opinion {
         left: 40px;
@@ -478,7 +482,6 @@ button:-moz-focusring,
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center; }
   .section-button {
     background-color: transparent;
@@ -504,18 +507,17 @@ button:-moz-focusring,
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center; }
   .section-family {
     background: url("../assets/background_family.jpg");
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center; }
 
 .section-slider {
   width: 100%;
+  height: 100%;
   position: relative;
   margin: 40px 20px 0 20px; }
   @media (min-width: 760px) {
@@ -526,7 +528,15 @@ button:-moz-focusring,
       width: 27em;
       margin: 4em 0px; } }
   .section-slider__img {
-    width: 100%; }
+    width: 100%;
+    display: none; }
+    .section-slider__img--fade {
+      display: block;
+      width: 100%;
+      -webkit-animation: fade 5s infinite ease-in-out;
+      -moz-animation: fade 5s infinite ease-in-out;
+      -o-animation: fade 5s infinite ease-in-out;
+      animation: fade 5s infinite ease-in-out; }
   .section-slider__ctrl {
     position: absolute;
     left: 5%;
@@ -543,6 +553,46 @@ button:-moz-focusring,
     .section-slider__controlls:hover {
       color: #841f1f;
       background: #fff; }
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fade {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-ms-keyframes fade {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes fade {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 .map {
   flex: 0 1 100%;
@@ -567,8 +617,8 @@ button:-moz-focusring,
       flex: 0 1 50%; } }
   .contact-adress {
     height: 50%;
-    width: 100%;
     background: url("../assets/background-reception.jpg");
+    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
