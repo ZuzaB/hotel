@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 $(function() {
 
   //współrzędne do mapy 49.720260, 19.071670
@@ -32,8 +32,8 @@ var $menu = $( '.menu-nav'),
     });
 
 //top slider
-var $tipSlider = $(".top-slider"),
-    $topImgs = $tipSlider.find('.top-img'),
+var $topSlider = $('.top-slider'),
+    $topImgs = $topSlider.find('.top-img'),
     listLen = $topImgs.length,
     changeImgTime = 5000,
     transitionSpeed = 2000,
@@ -48,26 +48,19 @@ var $tipSlider = $(".top-slider"),
       $topImgs.eq(index).fadeIn(transitionSpeed);
     });
   };
-
 $topImgs.not(':first').hide();
 setInterval(changeSlides, changeImgTime);
-//map
-function initMap() {
-  var uluru = {lat: 49.720, lng: 19.071};
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 10,
-    center: uluru
-  });
-  var marker = new google.maps.Marker({
-    position: uluru,
-    map: map
-  });
-}
 
+//slider with pause
+var $next = $('.section-slider__controlls--right'),
+    $prev = $('.section-slider__controlls--left'),
+    $stop = $('.section-slider__controlls--stop'),
+    $imgs = $('.section-slider__img');
 
+console.log($next, $prev, $stop, $imgs);
 //to top scroll
 var $scrollTopBtn = $('.go-top');
   $scrollTopBtn.on('click',function(){
-    $("html, body").animate({ scrollTop: 0 }, 500);
+    $('html, body').animate({ scrollTop: 0 }, 500);
   });
 });

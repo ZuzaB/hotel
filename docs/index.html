@@ -185,7 +185,7 @@
   </section>
   <section class="container section-spa">
       <div class="section-slider">
-        <img class="section-slider__img" src="assets/spa_1.jpg" alt="">
+        <img class="section-slider__img" src="assets/spa_1.jpg" alt="Masaż">
         <div class="section-slider__ctrl">
           <div class="section-slider__controlls section-slider__controlls--left"><i class="icon-angle-left"></i></div>
           <div class="section-slider__controlls section-slider__controlls--stop"><i class="icon-pause"></i> <i class="icon-play hidden"></i></div>
@@ -308,20 +308,20 @@
   <script src="js/jquery.min.js" type="text/javascript"></script>
   <script src="js/app.js" type="text/javascript"></script>
   <script>
-  function initMap() {
-    var uluru = {lat: 49.720, lng: 19.071};
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 11,
-      center: uluru,
-      styles: [ { "featureType": "road", "stylers": [ { "visibility": "off" } ] } ]
-    });
-    var image = 'assets/map.png';
-    var customMarker = new google.maps.Marker({
-      position: {lat: 49.720, lng: 19.071},
-      map: map,
-      icon: image
-    });
-  }
+      function initMap() {
+        var uluru = {lat: 49.720, lng: 19.071};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 11,
+          center: uluru,
+          styles: [ { "featureType": "road", "stylers": [ { "visibility": "off" } ] } ]
+        });
+        var image = 'assets/map.png';
+        var customMarker = new google.maps.Marker({
+          position: {lat: 49.720, lng: 19.071},
+          map: map,
+          icon: image
+        });
+      }
   </script>
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy_4XeTqfjur4wMALbjd-VDui_dAX1uVU&callback=initMap">
