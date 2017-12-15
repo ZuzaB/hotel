@@ -1,7 +1,6 @@
-// 'use strict';
+'use strict';
 $(function() {
 
-  //współrzędne do mapy 49.720260, 19.071670
 //nav events
 var $nav = $('.menu'),
     $navHeight = $nav.height();
@@ -48,19 +47,29 @@ var $topSlider = $('.top-slider'),
       $topImgs.eq(index).fadeIn(transitionSpeed);
     });
   };
-$topImgs.not(':first').hide();
 setInterval(changeSlides, changeImgTime);
 
-//slider with pause
-var $next = $('.section-slider__controlls--right'),
-    $prev = $('.section-slider__controlls--left'),
-    $stop = $('.section-slider__controlls--stop'),
-    $imgs = $('.section-slider__img');
+//slider in offer adress__reception
+var $nextArrow = $('.slider__arrow--right'),
+    $prevArrow = $('.slider__arrow--left');
 
-console.log($next, $prev, $stop, $imgs);
-//to top scroll
+//slider with pause in Vanilla JS
+var next = document.querySelectorAll('.section-slider__controlls--right'),
+    prev = document.querySelectorAll('.section-slider__controlls--left'),
+    stop = document.querySelectorAll('.section-slider__controlls--stop'),
+    imgs = document.querySelectorAll('.section-slider__img');//usunąć
+
+
+
+
+
+
+
+//go top
 var $scrollTopBtn = $('.go-top');
   $scrollTopBtn.on('click',function(){
     $('html, body').animate({ scrollTop: 0 }, 500);
   });
+
+  console.log($nextArrow, $prevArrow, $scrollTopBtn, $nav);
 });
