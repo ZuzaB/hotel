@@ -1,9 +1,11 @@
 //normalize
+
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
 }
@@ -58,18 +60,18 @@ html [type="button"],
   -webkit-appearance: button;
 }
 
-button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
-button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type="submit"]:-moz-focusring,
+button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -88,6 +90,7 @@ button:-moz-focusring,
   display: none;
 }
 //global
+
 * {
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
@@ -98,14 +101,13 @@ button:-moz-focusring,
   max-width: 1700px;
   height: auto;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  @include flexbox;
+  @include flex-wrap(wrap);
+  @include justify-content(center);
+  @include align-items(center);
   font-size: 2.8vw;
-  // font-size: 1.4vw;
   color: $main-text--dark;
-  @include for-size(phone-up){
+  @include for-size(phone-up) {
     font-size: 1.4vw;
   }
 }

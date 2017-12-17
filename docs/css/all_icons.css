@@ -9,16 +9,6 @@
   font-weight: normal;
   font-style: normal;
 }
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'all_icons';
-    src: url('../font/all_icons.svg?12417048#all_icons') format('svg');
-  }
-}
-*/
 
  [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "all_icons";
@@ -50,9 +40,6 @@
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
 .icon-checked-mark:before { content: '\e801'; } /* '' */

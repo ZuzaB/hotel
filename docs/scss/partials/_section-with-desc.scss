@@ -3,7 +3,7 @@
   padding: 1em 2em 4em;
   margin: 2em;
   text-align: center;
-  @include for-size(tablet-portrait-up){
+  @include for-size(tablet-portrait-up) {
     width: 27em;
     margin: 3em 20em 3em 9em;
     text-align: left;
@@ -22,12 +22,13 @@
   &-desc {
     margin-bottom: 50px;
     font-size: 15px;
-    @include for-size(tablet-landscape-up){
+    @include for-size(tablet-landscape-up) {
       font-size: 0.7em;
     }
+
     &-container {
       line-height: 1.5em;
-      @include for-size(tablet-portrait-up){
+      @include for-size(tablet-portrait-up) {
         width: 20em;
       }
     }
@@ -39,7 +40,7 @@
 
   &-rooms {
     background: url("../assets/background_rooms.jpg");
-    @include background_img;
+    @include background_img--fixed;
   }
 
   &-button {
@@ -68,7 +69,7 @@
 
   &-location {
     background: url("../assets/background_balkon.jpg");
-    @include background_img;
+    @include background_img--fixed;
   }
 
   &-family {

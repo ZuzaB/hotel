@@ -1,14 +1,14 @@
 .menu {
-  justify-content: space-between;
+  @include justify-content(space-between);
   font-weight: bold;
   text-transform: uppercase;
   padding: 6px 10px;
   position: relative;
-  @include for-size(phone-up){
+  @include for-size(phone-up) {
     padding: 6px 40px;
   }
   @include for-size(tablet-landscape-up) {
-    justify-content: flex-start;
+    @include justify-content(flex-start);
   }
 
   &--fixed {
@@ -24,28 +24,32 @@
       padding: 10px;
       font-size: 12px;
       border: 1px solid #dedede;
+
       &:hover {
         border: 1px solid $main-brand;
       }
     }
+
     &__link {
       @include reset-link;
+
       &:hover {
         color: $main-brand;
       }
     }
   }
+
   &-sub {
-    padding-left: 0px;
+    padding-left: 0;
     @include for-size(tablet-landscape-up) {
-        display: none;
-        position: absolute;
-        background: $main-brand;
-        margin: 0;
-        z-index: 1;
-        padding-left: 10px;
-        top: 2.5em;
-        left: 0;
+      display: none;
+      position: absolute;
+      background: $main-brand;
+      margin: 0;
+      z-index: 1;
+      padding-left: 10px;
+      top: 2.5em;
+      left: 0;
     }
 
     &__item {
@@ -61,11 +65,13 @@
       @include reset-link;
       color: $main-text--light;
       font-weight: normal;
+
       &:hover {
         font-weight: bold;
       }
     }
   }
+
   .nav {
     position: absolute;
     float: right;
@@ -81,6 +87,7 @@
       width: 96%;
     }
   }
+
   &-nav {
     display: none;
     font-size: 18px;
@@ -92,6 +99,7 @@
       background: none;
       position: static;
     }
+
     .icon-cancel {
       font-size: 20px;
       cursor: pointer;
@@ -99,40 +107,46 @@
         display: none;
       }
     }
+
     &__item {
       list-style: none;
       padding: 10px 1.6em;
       @include for-size(tablet-landscape-up) {
-         @include reset-list;
-          position: relative;
+        @include reset-list;
+        position: relative;
       }
+
       &:hover {
         .menu-sub {
           display: block;
         }
       }
+
       &--clouse {
         text-align: right;
         color: $main-text--light;
       }
+
       &--sub {
         @include for-size(tablet-landscape-up) {
-        &:hover {
-         background: $main-brand;
-         a {
-           color: $main-text--light;
-         }
+          &:hover {
+            background: $main-brand;
+
+            a {
+              color: $main-text--light;
+            }
+          }
         }
       }
-      }
+
       &--logo {
         display: none;
         @include for-size(tablet-landscape-up) {
           padding: 0 60px;
           display: inline-block;
         }
-
       }
+
       &--last {
         padding-right: 0;
       }
@@ -146,11 +160,12 @@
         font-weight: bold;
         color: inherit;
       }
+
       &:hover {
         font-weight: bolder;
         @include for-size(tablet-landscape-up) {
-        color: $main-brand;
-      }
+          color: $main-brand;
+        }
       }
     }
   }
@@ -158,9 +173,9 @@
   &-logo {
     display: block;
     position: absolute;
-    top:1em;
+    top: 0.5em;
     left: 35%;
-    @include for-size(phone-up){
+    @include for-size(phone-up) {
       left: 45%;
     }
     @include for-size(tablet-landscape-up) {
@@ -179,10 +194,11 @@
     display: block;
     cursor: pointer;
     font-size: 40px;
+
     &:hover {
       color: $main-brand;
     }
-    @include for-size(phone-up){
+    @include for-size(phone-up) {
       font-size: 50px;
     }
     @include for-size(tablet-landscape-up) {
@@ -193,16 +209,19 @@
 
 .top {
   position: relative;
-  &-slider{
+
+  &-slider {
     width: 100%;
     height: 100%;
   }
+
   &-img {
     background: url("../assets/top_background_view.jpg");
     @include background_img;
+
     &--second {
       background: url("../assets/top_background_room.jpg");
-        @include background_img;
+      @include background_img;
     }
   }
 
@@ -241,8 +260,9 @@
         font-size: 15px;
       }
       @include for-size(tablet-portrait-up) {
-      font-size: 1em;
-    }
+        font-size: 1em;
+      }
+
       &--small {
         font-weight: normal;
         font-size: 8px;
@@ -250,8 +270,8 @@
           font-size: 10px;
         }
         @include for-size(tablet-portrait-up) {
-        font-size: 0.65em;
-      }
+          font-size: 0.65em;
+        }
       }
     }
   }
@@ -270,7 +290,7 @@
     text-align: center;
     line-height: 1em;
     font-size: 10px;
-    @include for-size(phone-up){
+    @include for-size(phone-up) {
       bottom: 20px;
     }
     @include for-size(tablet-portrait-up) {
@@ -279,11 +299,12 @@
       height: 4em;
       width: 4em;
       font-size: 1em;
-
     }
+
     &__rating {
       line-height: 1.5em;
     }
+
     &__desc {
       font-size: 8px;
       font-weight: 600;
