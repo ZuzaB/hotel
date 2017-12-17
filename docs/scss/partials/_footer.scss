@@ -17,6 +17,7 @@
       display: block;
       padding: 10px;
       font-size: 14px;
+      @include reset-link;
       @include for-size(tablet-portrait-up) {
         font-size: 16px;
       }
